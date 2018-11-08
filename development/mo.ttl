@@ -61,7 +61,11 @@
 
 ###  https://w3id.org/mint/mo#hasReference
 :hasReference rdf:type owl:ObjectProperty ;
-              rdfs:domain :Ensemble ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( :Ensemble
+                                          :EnsembleSpecification
+                                        )
+                          ] ;
               rdfs:range :Realization ;
               rdfs:comment "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble"@en ;
               rdfs:label "has reference"@en .
@@ -69,7 +73,7 @@
 
 ###  https://w3id.org/mint/mo#hasTheme
 :hasTheme rdf:type owl:ObjectProperty ;
-          rdfs:domain :Ensemble ;
+          rdfs:domain :EnsembleSpecification ;
           rdfs:comment "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"@en ;
           rdfs:label "has theme"@en .
 
@@ -77,6 +81,16 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.opmw.org/ontology/DataVariable
+<http://www.opmw.org/ontology/DataVariable> rdf:type owl:Class ;
+                                            rdfs:isDefinedBy <http://www.opmw.org/ontology/> .
+
+
+###  http://www.opmw.org/ontology/ParameterVariable
+<http://www.opmw.org/ontology/ParameterVariable> rdf:type owl:Class ;
+                                                 rdfs:isDefinedBy <http://www.opmw.org/ontology/> .
+
 
 ###  http://www.opmw.org/ontology/WorkflowExecutionAccount
 <http://www.opmw.org/ontology/WorkflowExecutionAccount> rdf:type owl:Class ;
@@ -90,28 +104,82 @@
                                                 rdfs:isDefinedBy <http://www.opmw.org/ontology> .
 
 
+###  http://www.w3.org/ns/prov#Plan
+<http://www.w3.org/ns/prov#Plan> rdf:type owl:Class ;
+                                 rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .
+
+
+###  https://w3id.org/mint/mo#CounterFactualQuestion
+:CounterFactualQuestion rdf:type owl:Class ;
+                        rdfs:subClassOf :ModelingQuestion .
+
+
 ###  https://w3id.org/mint/mo#DataEnsemble
 :DataEnsemble rdf:type owl:Class ;
-              rdfs:subClassOf :Ensemble .
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasTheme ;
+                                    owl:someValuesFrom <http://www.opmw.org/ontology/DataVariable>
+                                  ] ;
+              rdfs:subClassOf :EnsembleSpecification ;
+              rdfs:label "Data ensemble"@en .
+
+
+###  https://w3id.org/mint/mo#DiagnosticQuestion
+:DiagnosticQuestion rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelingQuestion .
 
 
 ###  https://w3id.org/mint/mo#Ensemble
-:Ensemble rdf:type owl:Class .
+:Ensemble rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasReference ;
+                                owl:someValuesFrom :Realization
+                              ] ;
+          rdfs:comment """A collection of realizations that have a common theme. The theme can be implemented as a variation over some workflow elements while the rest of the workflow is considered fixed.  For example, an ensemble may vary the value of an input parameter while all else (e.g., the input data, the models) remains the same.
+ 
+In some cases, the workflow elements that are not in the theme can be considered fixed and will be the same for all the ensemble elements.  This is the case when a parameter is varied, since the data preparation and modeling steps of the workflow will typically be exactly the same.  Note that the workflow elements not in the theme can be considered fixed but in reality they will not be the same.  For example, if a variation in the initial data is the theme it may not be possible to use the same model configuration for all the initial conditions, and if the model configuration varies then the data preparation steps may also vary."""@en ;
+          rdfs:label "Ensemble"@en .
+
+
+###  https://w3id.org/mint/mo#EnsembleSpecification
+:EnsembleSpecification rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasReference ;
+                                             owl:someValuesFrom :Realization
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasTheme ;
+                                             owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                           ] ;
+                       rdfs:comment """A workflow ensemble specification includes:
+1.     the theme of the ensemble
+2.     a comparable structure for the remainder of the realizations
+3.     (optionally) a reference realization"""@en ;
+                       rdfs:label "Ensemble specification"@en .
 
 
 ###  https://w3id.org/mint/mo#ExecutableWorkflow
 :ExecutableWorkflow rdf:type owl:Class ;
-                    rdfs:subClassOf :WorkflowTemplate .
+                    rdfs:subClassOf <http://www.w3.org/ns/prov#Plan> ;
+                    rdfs:comment "Type of plan that specifies not only the dataflow but also input and output datasets"@en ;
+                    rdfs:label "Executable workflow"@en .
 
 
 ###  https://w3id.org/mint/mo#HighLevelWorkflowTemplate
 :HighLevelWorkflowTemplate rdf:type owl:Class ;
-                           rdfs:subClassOf :WorkflowTemplate .
+                           rdfs:subClassOf <http://www.w3.org/ns/prov#Plan> ;
+                           rdfs:comment "A type of workflow specification that includes the main steps to execute, but not intermediate steps and data transformations"@en ;
+                           rdfs:label "High level workflow"@en .
 
 
 ###  https://w3id.org/mint/mo#ModelEnsemble
 :ModelEnsemble rdf:type owl:Class ;
-               rdfs:subClassOf :Ensemble .
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasTheme ;
+                                     owl:someValuesFrom <https://w3id.org/mint/modelCatalog#Model>
+                                   ] ;
+               rdfs:subClassOf :EnsembleSpecification ;
+               rdfs:label "Model ensemble"@en .
 
 
 ###  https://w3id.org/mint/mo#ModelingQuestion
@@ -120,7 +188,22 @@
 
 ###  https://w3id.org/mint/mo#ParameterEnsemble
 :ParameterEnsemble rdf:type owl:Class ;
-                   rdfs:subClassOf :Ensemble .
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasTheme ;
+                                         owl:someValuesFrom <http://www.opmw.org/ontology/ParameterVariable>
+                                       ] ;
+                   rdfs:subClassOf :EnsembleSpecification ;
+                   rdfs:label "Parameter variable"@en .
+
+
+###  https://w3id.org/mint/mo#PrognosticQuestion
+:PrognosticQuestion rdf:type owl:Class ;
+                    rdfs:subClassOf :ModelingQuestion ;
+                    rdfs:comment """A prognostic question uses forecasts (i.e., data about possible initial conditions or situations) in order to understand how some set of variables of interest will behave in the future.  Prognostic questions may look into a few days or into hundreds of years into the future.
+ 
+Examples of prognostic questions are: Can we expect flooding in South Sudan in the upcoming rainy season?  How does a 2-sigma drought affect water availability for crops?
+How will climate change impact water resources (e.g. reservoirs in South Sudan) by the year 2030?"""@en ;
+                    rdfs:label "Prognostic question"@en .
 
 
 ###  https://w3id.org/mint/mo#Realization
@@ -131,8 +214,14 @@
 
 ###  https://w3id.org/mint/mo#WorkflowTemplate
 :WorkflowTemplate rdf:type owl:Class ;
-                  rdfs:comment "A workflow template can be created to specify the dataflow among the computational steps but without specifying input data and parameters"@en ;
+                  rdfs:subClassOf <http://www.w3.org/ns/prov#Plan> ;
+                  rdfs:comment "A workflow template specifies the dataflow among the computational steps but without specifying input data and parameters"@en ;
                   rdfs:label "Workflow template"@en .
+
+
+###  https://w3id.org/mint/modelCatalog#Model
+<https://w3id.org/mint/modelCatalog#Model> rdf:type owl:Class ;
+                                           rdfs:isDefinedBy <https://w3id.org/mint/modelCatalog#> .
 
 
 ###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
