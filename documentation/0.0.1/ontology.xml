@@ -1,0 +1,631 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/mint/mo#"
+     xml:base="https://w3id.org/mint/mo"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/mint/mo">
+        <owl:versionIRI rdf:resource="https://w3id.org/mint/mo/0.0.1"/>
+        <terms:creator xml:lang="en">Daniel Garijo</terms:creator>
+        <terms:creator xml:lang="en">Deborah Khider</terms:creator>
+        <terms:creator xml:lang="en">Varun Ratnakar</terms:creator>
+        <terms:creator xml:lang="en">Yolanda Gil</terms:creator>
+        <terms:licence rdf:resource="http://creativecommons.org/licenses/by/2.0/"/>
+        <terms:title xml:lang="en">The MINT Modeling Ontology</terms:title>
+        <rdfs:comment xml:lang="en">An ontology designed to define a common data model to define modeling questions, prepare the execution of analysis and present results to modelers.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/licence -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/licence"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/hasPart">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasBaseline -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasBaseline">
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#CounterFactualQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Realization"/>
+        <rdfs:comment xml:lang="en">Property that indicates the baseline or status quo of a counterfactual question for comparison.</rdfs:comment>
+        <rdfs:label xml:lang="en">has baseline</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasDataSpecification -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasDataSpecification">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#DataSpecification"/>
+        <rdfs:comment xml:lang="en">Property that indicates which hindcast or forecast specification is associated to a modeling questions. The data specification may include parameters as well</rdfs:comment>
+        <rdfs:label xml:lang="en">has data specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasEnsemble -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasEnsemble">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Ensemble"/>
+        <rdfs:label xml:lang="en">has ensemble</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasEnsembleSpecification -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasEnsembleSpecification">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:comment xml:lang="en">Property that associates a question to the ensemble specification(s) it has</rdfs:comment>
+        <rdfs:label xml:lang="en">has ensemble specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasExecutableWorkflow -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasExecutableWorkflow">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#ExecutableWorkflow"/>
+        <rdfs:label xml:lang="en">has executable workflow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasHighLevelWorkflow -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasHighLevelWorkflow">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#HighLevelWorkflowTemplate"/>
+        <rdfs:label xml:lang="en">has high level workflow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasIntervention -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasIntervention">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Intervention"/>
+        <rdfs:comment xml:lang="en">Property that indicates the interventions associated to a modeling question</rdfs:comment>
+        <rdfs:label xml:lang="en">has intervention</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasInterventionSpecification -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasInterventionSpecification">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/mint/mo#Intervention"/>
+                    <rdf:Description rdf:about="https://w3id.org/mint/mo#ModelingQuestion"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#InterventionSpecification"/>
+        <rdfs:comment xml:lang="en">Property that indicates which intervention specifications are associated to an intervention</rdfs:comment>
+        <rdfs:label xml:lang="en">has intervention specification</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasNestedEnsemble -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasNestedEnsemble">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#Ensemble"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Ensemble"/>
+        <rdfs:comment xml:lang="en">An ensemble may be an aggregation of simpler nested ensembles.</rdfs:comment>
+        <rdfs:label xml:lang="en">has nested ensemble</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasRealization -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasRealization">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#Ensemble"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Realization"/>
+        <rdfs:comment xml:lang="en">An ensemble is a collection of realizations, and therefore this property captures the containment relationship</rdfs:comment>
+        <rdfs:label xml:lang="en">has realization</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasReference -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasReference">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/mint/mo#Ensemble"/>
+                    <rdf:Description rdf:about="https://w3id.org/mint/mo#EnsembleSpecification"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#Realization"/>
+        <rdfs:comment xml:lang="en">An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble. Ensemble specifications may include a reference realization for comparison against the rest.</rdfs:comment>
+        <rdfs:label xml:lang="en">has reference</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasTheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasTheme">
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:comment xml:lang="en">Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed</rdfs:comment>
+        <rdfs:label xml:lang="en">has theme</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/mint/mo#hasWorkflowTemplate -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/mint/mo#hasWorkflowTemplate">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/hasPart"/>
+        <rdfs:domain rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:range rdf:resource="https://w3id.org/mint/mo#WorkflowTemplate"/>
+        <rdfs:label xml:lang="en">has workflow template</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opmw.org/ontology/DataVariable -->
+
+
+    <owl:Class rdf:about="http://www.opmw.org/ontology/DataVariable">
+        <rdfs:isDefinedBy rdf:resource="http://www.opmw.org/ontology/"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opmw.org/ontology/ParameterVariable -->
+
+
+    <owl:Class rdf:about="http://www.opmw.org/ontology/ParameterVariable">
+        <rdfs:isDefinedBy rdf:resource="http://www.opmw.org/ontology/"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opmw.org/ontology/WorkflowExecutionAccount -->
+
+
+    <owl:Class rdf:about="http://www.opmw.org/ontology/WorkflowExecutionAccount">
+        <owl:equivalentClass rdf:resource="https://w3id.org/mint/mo#Realization"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.opmw.org/ontology/"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opmw.org/ontology/WorkflowTemplate -->
+
+
+    <owl:Class rdf:about="http://www.opmw.org/ontology/WorkflowTemplate">
+        <owl:equivalentClass rdf:resource="https://w3id.org/mint/mo#WorkflowTemplate"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.opmw.org/ontology"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Plan -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Plan">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#CounterFactualQuestion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#CounterFactualQuestion">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasBaseline"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mint/mo#Realization"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:comment xml:lang="en">A counterfactual question (often asked as a “what if” question) uses data about a situation to explore alternative timelines that are either diagnostic or prognostic in nature.
+ 
+Examples of counterfactual questions are:  What if there is a drought during the next planting season?  What if roads had not been inundated during the last flood?</rdfs:comment>
+        <rdfs:label xml:lang="en">Counterfactual question</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#DataEnsemble -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#DataEnsemble">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasTheme"/>
+                <owl:someValuesFrom rdf:resource="http://www.opmw.org/ontology/DataVariable"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:comment xml:lang="en">A data ensemble is an ensemble where the theme consists on a variation of data</rdfs:comment>
+        <rdfs:label xml:lang="en">Data ensemble</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#DataSpecification -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#DataSpecification">
+        <rdfs:comment xml:lang="en">All the input data and parameters needed by the models in order to carry out one realization.</rdfs:comment>
+        <rdfs:label xml:lang="en">Data specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#DiagnosticQuestion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#DiagnosticQuestion">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasDataSpecification"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mint/mo#HindcastSpecification"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:comment xml:lang="en">A diagnostic question uses data about past situations in order to understand how some set of variables of interest behave.  Data about past situations may be available from observations, but when variables cannot be observed the data may be hindcasts of those variables, i.e., their probable values.  Diagnostic questions are useful to identify the source of a problem that has already occurred, and to understand how to avoid the same problem in the future.
+ 
+An example of a diagnostic question is: “What caused the crops to fail in 2017 in South Sudan?”</rdfs:comment>
+        <rdfs:label xml:lang="en">Diagnostic question</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#Ensemble -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#Ensemble">
+        <rdfs:comment xml:lang="en">A collection of realizations that have a common theme. The theme can be implemented as a variation over some workflow elements while the rest of the workflow is considered fixed.  For example, an ensemble may vary the value of an input parameter while all else (e.g., the input data, the models) remains the same.
+ 
+In some cases, the workflow elements that are not in the theme can be considered fixed and will be the same for all the ensemble elements.  This is the case when a parameter is varied, since the data preparation and modeling steps of the workflow will typically be exactly the same.  Note that the workflow elements not in the theme can be considered fixed but in reality they will not be the same.  For example, if a variation in the initial data is the theme it may not be possible to use the same model configuration for all the initial conditions, and if the model configuration varies then the data preparation steps may also vary.</rdfs:comment>
+        <rdfs:label xml:lang="en">Ensemble</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#EnsembleSpecification -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#EnsembleSpecification">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasReference"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mint/mo#Realization"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasTheme"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">A workflow ensemble specification includes:
+1.     the theme of the ensemble
+2.     a comparable structure for the remainder of the realizations
+3.     (optionally) a reference realization</rdfs:comment>
+        <rdfs:label xml:lang="en">Ensemble specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#ExecutableWorkflow -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#ExecutableWorkflow">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+        <rdfs:comment xml:lang="en">Type of plan that specifies not only the dataflow but also input and output datasets</rdfs:comment>
+        <rdfs:label xml:lang="en">Executable workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#ForecastSpecification -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#ForecastSpecification">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#DataSpecification"/>
+        <rdfs:comment xml:lang="en">All the input data and parameters needed by the models in order to carry out one realization in prognostic modeling questions</rdfs:comment>
+        <rdfs:label xml:lang="en">Forecast specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#HighLevelWorkflowTemplate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#HighLevelWorkflowTemplate">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+        <rdfs:comment xml:lang="en">A type of workflow specification that includes the main steps to execute, but not intermediate steps and data transformations</rdfs:comment>
+        <rdfs:label xml:lang="en">High level workflow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#HindcastSpecification -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#HindcastSpecification">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#DataSpecification"/>
+        <rdfs:comment xml:lang="en">All the input data and parameters needed by the models in order to carry out one realization in diagnostic modeling questions</rdfs:comment>
+        <rdfs:label xml:lang="en">Hindcast specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#Intervention -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#Intervention">
+        <rdfs:comment xml:lang="en">Event that can change the behavior of a system either in the past or in the future.  Typically an intervention is carried out by humans changing the situation (e.g., reducing the amount of agriculture subsidies) with the goal of changing outcomes.
+ 
+Interventions have a role in all types of questions: diagnostic (e.g., what was the effect of the help sent to South Sudan during the 2017 famine?), prognostic (e.g., what would happen if help was sent to South Sudan in 2018?) or counterfactual (e.g., what would have happened if help had been sent in the form of cash rather than food supply?).</rdfs:comment>
+        <rdfs:label xml:lang="en">Intervention</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#InterventionSpecification -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#InterventionSpecification">
+        <rdfs:comment xml:lang="en">An intervention specification consists of some of the input data and parameters needed by the models in order to run one realization.
+
+While an intervention specifies the element that you are planning on artificially varying, the intervention specification indicates the actual value of such modification. The elements of an intervention specification can be defined with the dcterms:hasPart relationship</rdfs:comment>
+        <rdfs:label xml:lang="en">Intervention specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#ModelEnsemble -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#ModelEnsemble">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasTheme"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mint/modelCatalog#Model"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:comment xml:lang="en">A workflow ensemble has a theme that consists on varying a model</rdfs:comment>
+        <rdfs:label xml:lang="en">Model ensemble</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#ModelingQuestion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#ModelingQuestion">
+        <rdfs:comment xml:lang="en">A driver of the main analysis carried out. The modeling question associates tasks, ensemble specifications and executions associated to a region.</rdfs:comment>
+        <rdfs:label xml:lang="en">Modeling question</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#ParameterEnsemble -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#ParameterEnsemble">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasTheme"/>
+                <owl:someValuesFrom rdf:resource="http://www.opmw.org/ontology/ParameterVariable"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#EnsembleSpecification"/>
+        <rdfs:comment xml:lang="en">A parameter ensemble is an ensemble in which the theme consists on the variation of a parameter</rdfs:comment>
+        <rdfs:label xml:lang="en">Parameter variable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#PrognosticQuestion -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#PrognosticQuestion">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/mint/mo#hasDataSpecification"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/mint/mo#ForecastSpecification"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/mint/mo#ModelingQuestion"/>
+        <rdfs:comment xml:lang="en">A prognostic question uses forecasts (i.e., data about possible initial conditions or situations) in order to understand how some set of variables of interest will behave in the future.  Prognostic questions may look into a few days or into hundreds of years into the future.
+ 
+Examples of prognostic questions are: Can we expect flooding in South Sudan in the upcoming rainy season?  How does a 2-sigma drought affect water availability for crops?
+How will climate change impact water resources (e.g. reservoirs in South Sudan) by the year 2030?</rdfs:comment>
+        <rdfs:label xml:lang="en">Prognostic question</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#Realization -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#Realization">
+        <rdfs:comment xml:lang="en">A realization is a single execution of a workflow, where given a fixed input situation and parameter settings (i.e., given input datasets and parameters), the integrated model generates a prediction (i.e., output datasets).</rdfs:comment>
+        <rdfs:label xml:lang="en">Realization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#Region -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#Region">
+        <rdfs:comment xml:lang="en">Location of interest for the modeling question at hand. 
+
+The goal of this class is to be aligned to a geographic ontology.</rdfs:comment>
+        <rdfs:label xml:lang="en">Region</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#WorkflowEnsembleAggregation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#WorkflowEnsembleAggregation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">Activity that involves comparing or combining the results of the executions of the workflows for the ensemble elements</rdfs:comment>
+        <rdfs:label xml:lang="en">Workflow ensemble aggregation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#WorkflowEnsembleConstruction -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#WorkflowEnsembleConstruction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">Activity that  involves generating an executable workflow for each element of the ensemble following the specification</rdfs:comment>
+        <rdfs:label xml:lang="en">Workflow ensemble construction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#WorkflowEnsembleExecution -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#WorkflowEnsembleExecution">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:comment xml:lang="en">Activity that involves running the executable workflows of ensemble element</rdfs:comment>
+        <rdfs:label xml:lang="en">Workflow ensemble execution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/mo#WorkflowTemplate -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/mo#WorkflowTemplate">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+        <rdfs:comment xml:lang="en">A workflow template specifies the dataflow among the computational steps but without specifying input data and parameters</rdfs:comment>
+        <rdfs:label xml:lang="en">Workflow template</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/mint/modelCatalog#Model -->
+
+
+    <owl:Class rdf:about="https://w3id.org/mint/modelCatalog#Model">
+        <rdfs:isDefinedBy rdf:resource="https://w3id.org/mint/modelCatalog#"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/ -->
+
+

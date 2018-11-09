@@ -1,0 +1,1064 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.4), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/ns/prov", "http://purl.org/dc/terms", "https://w3id.org/mint/mo", "http://www.opmw.org/ontology", "https://w3id.org/mint/modelCatalog" ],
+    "title" : {
+      "en" : "The MINT Modeling Ontology"
+    },
+    "iri" : "https://w3id.org/mint/mo",
+    "author" : [ "Yolanda Gil", "Deborah Khider", "Daniel Garijo", "Varun Ratnakar" ],
+    "comments" : {
+      "en" : "An ontology designed to define a common data model to define modeling questions, prepare the execution of analysis and present results to modelers."
+    },
+    "other" : {
+      "licence" : [ {
+        "identifier" : "licence",
+        "language" : "undefined",
+        "value" : "http://creativecommons.org/licenses/by/2.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Deborah Khider",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Daniel Garijo",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Yolanda Gil",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Varun Ratnakar",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "The MINT Modeling Ontology",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 30,
+    "objectPropertyCount" : 14,
+    "datatypePropertyCount" : 0,
+    "individualCount" : 0
+  },
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "15",
+    "type" : "owl:Class"
+  }, {
+    "id" : "16",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "21",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "5",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "owl:Class"
+  }, {
+    "id" : "50",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "62",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "38",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "66",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "29",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/mint/mo#CounterFactualQuestion",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CounterFactualQuestion",
+      "en" : "Counterfactual question"
+    },
+    "comment" : {
+      "en" : "A counterfactual question (often asked as a “what if” question) uses data about a situation to explore alternative timelines that are either diagnostic or prognostic in nature.\n \nExamples of counterfactual questions are:  What if there is a drought during the next planting season?  What if roads had not been inundated during the last flood?"
+    },
+    "id" : "0",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Activity",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/prov#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Activity"
+    },
+    "subClasses" : [ "3", "4", "5" ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#WorkflowEnsembleConstruction",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WorkflowEnsembleConstruction",
+      "en" : "Workflow ensemble construction"
+    },
+    "comment" : {
+      "en" : "Activity that  involves generating an executable workflow for each element of the ensemble following the specification"
+    },
+    "id" : "3",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#HindcastSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HindcastSpecification",
+      "en" : "Hindcast specification"
+    },
+    "comment" : {
+      "en" : "All the input data and parameters needed by the models in order to carry out one realization in diagnostic modeling questions"
+    },
+    "id" : "6",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#ForecastSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ForecastSpecification",
+      "en" : "Forecast specification"
+    },
+    "comment" : {
+      "en" : "All the input data and parameters needed by the models in order to carry out one realization in prognostic modeling questions"
+    },
+    "id" : "14",
+    "superClasses" : [ "7" ]
+  }, {
+    "iri" : "https://w3id.org/mint/modelCatalog#Model",
+    "baseIri" : "https://w3id.org/mint/modelCatalog",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "https://w3id.org/mint/modelCatalog#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Model"
+    },
+    "attributes" : [ "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#HighLevelWorkflowTemplate",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "HighLevelWorkflowTemplate",
+      "en" : "High level workflow"
+    },
+    "comment" : {
+      "en" : "A type of workflow specification that includes the main steps to execute, but not intermediate steps and data transformations"
+    },
+    "id" : "16",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#Realization",
+    "equivalent" : [ "21" ],
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Realization",
+      "en" : "Realization"
+    },
+    "comment" : {
+      "en" : "A realization is a single execution of a workflow, where given a fixed input situation and parameter settings (i.e., given input datasets and parameters), the integrated model generates a prediction (i.e., output datasets)."
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#Intervention",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Intervention",
+      "en" : "Intervention"
+    },
+    "comment" : {
+      "en" : "Event that can change the behavior of a system either in the past or in the future.  Typically an intervention is carried out by humans changing the situation (e.g., reducing the amount of agriculture subsidies) with the goal of changing outcomes.\n \nInterventions have a role in all types of questions: diagnostic (e.g., what was the effect of the help sent to South Sudan during the 2017 famine?), prognostic (e.g., what would happen if help was sent to South Sudan in 2018?) or counterfactual (e.g., what would have happened if help had been sent in the form of cash rather than food supply?)."
+    },
+    "id" : "30"
+  }, {
+    "iri" : "http://www.opmw.org/ontology/WorkflowExecutionAccount",
+    "baseIri" : "http://www.opmw.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opmw.org/ontology/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "WorkflowExecutionAccount"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#EnsembleSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EnsembleSpecification",
+      "en" : "Ensemble specification"
+    },
+    "subClasses" : [ "34", "35", "36" ],
+    "comment" : {
+      "en" : "A workflow ensemble specification includes:\n1.     the theme of the ensemble\n2.     a comparable structure for the remainder of the realizations\n3.     (optionally) a reference realization"
+    },
+    "id" : "33"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#DataEnsemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataEnsemble",
+      "en" : "Data ensemble"
+    },
+    "comment" : {
+      "en" : "A data ensemble is an ensemble where the theme consists on a variation of data"
+    },
+    "id" : "34",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#WorkflowEnsembleExecution",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WorkflowEnsembleExecution",
+      "en" : "Workflow ensemble execution"
+    },
+    "comment" : {
+      "en" : "Activity that involves running the executable workflows of ensemble element"
+    },
+    "id" : "5",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.opmw.org/ontology/DataVariable",
+    "baseIri" : "http://www.opmw.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opmw.org/ontology/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DataVariable"
+    },
+    "attributes" : [ "external" ],
+    "id" : "52"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "50",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/mint/mo#Region",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Region",
+      "en" : "Region"
+    },
+    "comment" : {
+      "en" : "Location of interest for the modeling question at hand. \n\nThe goal of this class is to be aligned to a geographic ontology."
+    },
+    "id" : "62"
+  }, {
+    "instances" : 0,
+    "union" : [ "1", "30" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "9"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#WorkflowEnsembleAggregation",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WorkflowEnsembleAggregation",
+      "en" : "Workflow ensemble aggregation"
+    },
+    "comment" : {
+      "en" : "Activity that involves comparing or combining the results of the executions of the workflows for the ensemble elements"
+    },
+    "id" : "4",
+    "superClasses" : [ "2" ]
+  }, {
+    "instances" : 0,
+    "union" : [ "12", "33" ],
+    "attributes" : [ "anonymous", "union" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "38",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.opmw.org/ontology/WorkflowTemplate",
+    "baseIri" : "http://www.opmw.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opmw.org/ontology",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "WorkflowTemplate"
+    },
+    "attributes" : [ "equivalent", "external" ],
+    "id" : "66"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#ExecutableWorkflow",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ExecutableWorkflow",
+      "en" : "Executable workflow"
+    },
+    "comment" : {
+      "en" : "Type of plan that specifies not only the dataflow but also input and output datasets"
+    },
+    "id" : "29",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#ModelEnsemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ModelEnsemble",
+      "en" : "Model ensemble"
+    },
+    "comment" : {
+      "en" : "A workflow ensemble has a theme that consists on varying a model"
+    },
+    "id" : "35",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#WorkflowTemplate",
+    "equivalent" : [ "66" ],
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WorkflowTemplate",
+      "en" : "Workflow template"
+    },
+    "comment" : {
+      "en" : "A workflow template specifies the dataflow among the computational steps but without specifying input data and parameters"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "32",
+    "superClasses" : [ "17" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#InterventionSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "InterventionSpecification",
+      "en" : "Intervention specification"
+    },
+    "comment" : {
+      "en" : "An intervention specification consists of some of the input data and parameters needed by the models in order to run one realization.\n\nWhile an intervention specifies the element that you are planning on artificially varying, the intervention specification indicates the actual value of such modification. The elements of an intervention specification can be defined with the dcterms:hasPart relationship"
+    },
+    "id" : "10"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#PrognosticQuestion",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PrognosticQuestion",
+      "en" : "Prognostic question"
+    },
+    "comment" : {
+      "en" : "A prognostic question uses forecasts (i.e., data about possible initial conditions or situations) in order to understand how some set of variables of interest will behave in the future.  Prognostic questions may look into a few days or into hundreds of years into the future.\n \nExamples of prognostic questions are: Can we expect flooding in South Sudan in the upcoming rainy season?  How does a 2-sigma drought affect water availability for crops?\nHow will climate change impact water resources (e.g. reservoirs in South Sudan) by the year 2030?"
+    },
+    "id" : "25",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#DataSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DataSpecification",
+      "en" : "Data specification"
+    },
+    "subClasses" : [ "6", "14" ],
+    "comment" : {
+      "en" : "All the input data and parameters needed by the models in order to carry out one realization."
+    },
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#ParameterEnsemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ParameterEnsemble",
+      "en" : "Parameter variable"
+    },
+    "comment" : {
+      "en" : "A parameter ensemble is an ensemble in which the theme consists on the variation of a parameter"
+    },
+    "id" : "36",
+    "superClasses" : [ "33" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#ModelingQuestion",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ModelingQuestion",
+      "en" : "Modeling question"
+    },
+    "subClasses" : [ "0", "27", "25" ],
+    "comment" : {
+      "en" : "A driver of the main analysis carried out. The modeling question associates tasks, ensemble specifications and executions associated to a region."
+    },
+    "id" : "1"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#DiagnosticQuestion",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "DiagnosticQuestion",
+      "en" : "Diagnostic question"
+    },
+    "comment" : {
+      "en" : "A diagnostic question uses data about past situations in order to understand how some set of variables of interest behave.  Data about past situations may be available from observations, but when variables cannot be observed the data may be hindcasts of those variables, i.e., their probable values.  Diagnostic questions are useful to identify the source of a problem that has already occurred, and to understand how to avoid the same problem in the future.\n \nAn example of a diagnostic question is: “What caused the crops to fail in 2017 in South Sudan?”"
+    },
+    "id" : "27",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "https://w3id.org/mint/mo#Ensemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Ensemble",
+      "en" : "Ensemble"
+    },
+    "comment" : {
+      "en" : "A collection of realizations that have a common theme. The theme can be implemented as a variation over some workflow elements while the rest of the workflow is considered fixed.  For example, an ensemble may vary the value of an input parameter while all else (e.g., the input data, the models) remains the same.\n \nIn some cases, the workflow elements that are not in the theme can be considered fixed and will be the same for all the ensemble elements.  This is the case when a parameter is varied, since the data preparation and modeling steps of the workflow will typically be exactly the same.  Note that the workflow elements not in the theme can be considered fixed but in reality they will not be the same.  For example, if a variation in the initial data is the theme it may not be possible to use the same model configuration for all the initial conditions, and if the model configuration varies then the data preparation steps may also vary."
+    },
+    "id" : "12"
+  }, {
+    "iri" : "http://www.w3.org/ns/prov#Plan",
+    "baseIri" : "http://www.w3.org/ns/prov",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/prov#",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Plan"
+    },
+    "subClasses" : [ "32", "29", "16" ],
+    "attributes" : [ "external" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://www.opmw.org/ontology/ParameterVariable",
+    "baseIri" : "http://www.opmw.org/ontology",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://www.opmw.org/ontology/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ParameterVariable"
+    },
+    "attributes" : [ "external" ],
+    "id" : "61"
+  } ],
+  "property" : [ {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "37",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "57",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "58",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "59",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "43",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "63",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "64",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "65",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "44",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "41",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/mint/mo#hasInterventionSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasInterventionSpecification",
+      "en" : "has intervention specification"
+    },
+    "domain" : "9",
+    "comment" : {
+      "en" : "Property that indicates which intervention specifications are associated to an intervention"
+    },
+    "attributes" : [ "object" ],
+    "id" : "8"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasEnsemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasEnsemble",
+      "en" : "has ensemble"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasReference",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasReference",
+      "en" : "has reference"
+    },
+    "domain" : "19",
+    "comment" : {
+      "en" : "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble. Ensemble specifications may include a reference realization for comparison against the rest."
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "range" : "17",
+    "domain" : "16",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasRealization",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasRealization",
+      "en" : "has realization"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "12",
+    "comment" : {
+      "en" : "An ensemble is a collection of realizations, and therefore this property captures the containment relationship"
+    },
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "range" : "1",
+    "domain" : "25",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "24"
+  }, {
+    "range" : "1",
+    "domain" : "27",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "range" : "17",
+    "domain" : "29",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "28"
+  }, {
+    "range" : "17",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "31"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasWorkflowTemplate",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "32",
+    "label" : {
+      "IRI-based" : "hasWorkflowTemplate",
+      "en" : "has workflow template"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "33",
+    "attributes" : [ "object" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://purl.org/dc/terms/hasPart",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "38",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/dc/terms/",
+        "type" : "iri"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasPart"
+    },
+    "domain" : "38",
+    "subproperty" : [ "39", "40", "41", "42", "11", "23", "43", "44", "37" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "13"
+  }, {
+    "range" : "7",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "47"
+  }, {
+    "range" : "33",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "48"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasTheme",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "50",
+    "label" : {
+      "IRI-based" : "hasTheme",
+      "en" : "has theme"
+    },
+    "minCardinality" : "1",
+    "domain" : "33",
+    "comment" : {
+      "en" : "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"
+    },
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "range" : "2",
+    "domain" : "5",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "51"
+  }, {
+    "range" : "33",
+    "domain" : "36",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "53"
+  }, {
+    "range" : "33",
+    "domain" : "35",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "54"
+  }, {
+    "range" : "2",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
+  }, {
+    "range" : "2",
+    "domain" : "3",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "56"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasDataSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "hasDataSpecification",
+      "en" : "has data specification"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "27",
+    "comment" : {
+      "en" : "Property that indicates which hindcast or forecast specification is associated to a modeling questions. The data specification may include parameters as well"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "57"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasReference",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasReference",
+      "en" : "has reference"
+    },
+    "domain" : "33",
+    "comment" : {
+      "en" : "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble. Ensemble specifications may include a reference realization for comparison against the rest."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasTheme",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "hasTheme",
+      "en" : "has theme"
+    },
+    "domain" : "35",
+    "comment" : {
+      "en" : "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "59"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasEnsembleSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "33",
+    "label" : {
+      "IRI-based" : "hasEnsembleSpecification",
+      "en" : "has ensemble specification"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that associates a question to the ensemble specification(s) it has"
+    },
+    "attributes" : [ "object" ],
+    "id" : "43"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasTheme",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "61",
+    "label" : {
+      "IRI-based" : "hasTheme",
+      "en" : "has theme"
+    },
+    "domain" : "36",
+    "comment" : {
+      "en" : "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "60"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasDataSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasDataSpecification",
+      "en" : "has data specification"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "25",
+    "comment" : {
+      "en" : "Property that indicates which hindcast or forecast specification is associated to a modeling questions. The data specification may include parameters as well"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "63"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasBaseline",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasBaseline",
+      "en" : "has baseline"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "Property that indicates the baseline or status quo of a counterfactual question for comparison."
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "64"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasTheme",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "hasTheme",
+      "en" : "has theme"
+    },
+    "domain" : "34",
+    "comment" : {
+      "en" : "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"
+    },
+    "attributes" : [ "object", "someValues" ],
+    "id" : "65"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasHighLevelWorkflow",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasHighLevelWorkflow",
+      "en" : "has high level workflow"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasDataSpecification",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasDataSpecification",
+      "en" : "has data specification"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that indicates which hindcast or forecast specification is associated to a modeling questions. The data specification may include parameters as well"
+    },
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasExecutableWorkflow",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "hasExecutableWorkflow",
+      "en" : "has executable workflow"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "41"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasBaseline",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasBaseline",
+      "en" : "has baseline"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "Property that indicates the baseline or status quo of a counterfactual question for comparison."
+    },
+    "attributes" : [ "object" ],
+    "id" : "67"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasNestedEnsemble",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "hasNestedEnsemble",
+      "en" : "has nested ensemble"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "12",
+    "comment" : {
+      "en" : "An ensemble may be an aggregation of simpler nested ensembles."
+    },
+    "attributes" : [ "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "https://w3id.org/mint/mo#hasIntervention",
+    "baseIri" : "https://w3id.org/mint/mo",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "hasIntervention",
+      "en" : "has intervention"
+    },
+    "superproperty" : [ "13" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Property that indicates the interventions associated to a modeling question"
+    },
+    "attributes" : [ "object" ],
+    "id" : "40"
+  } ]
+}

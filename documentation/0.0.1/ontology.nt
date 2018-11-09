@@ -1,0 +1,347 @@
+<https://w3id.org/mint/mo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/mint/mo> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/mint/mo/0.0.1> .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/creator> "Daniel Garijo"@en .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/creator> "Deborah Khider"@en .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/creator> "Varun Ratnakar"@en .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/creator> "Yolanda Gil"@en .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/licence> <http://creativecommons.org/licenses/by/2.0/> .
+<https://w3id.org/mint/mo> <http://purl.org/dc/terms/title> "The MINT Modeling Ontology"@en .
+<https://w3id.org/mint/mo> <http://www.w3.org/2000/01/rdf-schema#comment> "An ontology designed to define a common data model to define modeling questions, prepare the execution of analysis and present results to modelers."@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/licence
+<http://purl.org/dc/terms/licence> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/dc/terms/> .
+# 
+# https://w3id.org/mint/mo#hasBaseline
+<https://w3id.org/mint/mo#hasBaseline> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasBaseline> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#CounterFactualQuestion> .
+<https://w3id.org/mint/mo#hasBaseline> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Realization> .
+<https://w3id.org/mint/mo#hasBaseline> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the baseline or status quo of a counterfactual question for comparison."@en .
+<https://w3id.org/mint/mo#hasBaseline> <http://www.w3.org/2000/01/rdf-schema#label> "has baseline"@en .
+# 
+# https://w3id.org/mint/mo#hasDataSpecification
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#DataSpecification> .
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates which hindcast or forecast specification is associated to a modeling questions. The data specification may include parameters as well"@en .
+<https://w3id.org/mint/mo#hasDataSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has data specification"@en .
+# 
+# https://w3id.org/mint/mo#hasEnsemble
+<https://w3id.org/mint/mo#hasEnsemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasEnsemble> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasEnsemble> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasEnsemble> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Ensemble> .
+<https://w3id.org/mint/mo#hasEnsemble> <http://www.w3.org/2000/01/rdf-schema#label> "has ensemble"@en .
+# 
+# https://w3id.org/mint/mo#hasEnsembleSpecification
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that associates a question to the ensemble specification(s) it has"@en .
+<https://w3id.org/mint/mo#hasEnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has ensemble specification"@en .
+# 
+# https://w3id.org/mint/mo#hasExecutableWorkflow
+<https://w3id.org/mint/mo#hasExecutableWorkflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#ExecutableWorkflow> .
+<https://w3id.org/mint/mo#hasExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#label> "has executable workflow"@en .
+# 
+# https://w3id.org/mint/mo#hasHighLevelWorkflow
+<https://w3id.org/mint/mo#hasHighLevelWorkflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasHighLevelWorkflow> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasHighLevelWorkflow> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasHighLevelWorkflow> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#HighLevelWorkflowTemplate> .
+<https://w3id.org/mint/mo#hasHighLevelWorkflow> <http://www.w3.org/2000/01/rdf-schema#label> "has high level workflow"@en .
+# 
+# https://w3id.org/mint/mo#hasIntervention
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Intervention> .
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates the interventions associated to a modeling question"@en .
+<https://w3id.org/mint/mo#hasIntervention> <http://www.w3.org/2000/01/rdf-schema#label> "has intervention"@en .
+# 
+# https://w3id.org/mint/mo#hasInterventionSpecification
+<https://w3id.org/mint/mo#hasInterventionSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasInterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mint/mo#Intervention> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mint/mo#ModelingQuestion> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/mint/mo#hasInterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#InterventionSpecification> .
+<https://w3id.org/mint/mo#hasInterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "Property that indicates which intervention specifications are associated to an intervention"@en .
+<https://w3id.org/mint/mo#hasInterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "has intervention specification"@en .
+# 
+# https://w3id.org/mint/mo#hasNestedEnsemble
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#Ensemble> .
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Ensemble> .
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/2000/01/rdf-schema#comment> "An ensemble may be an aggregation of simpler nested ensembles."@en .
+<https://w3id.org/mint/mo#hasNestedEnsemble> <http://www.w3.org/2000/01/rdf-schema#label> "has nested ensemble"@en .
+# 
+# https://w3id.org/mint/mo#hasRealization
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#Ensemble> .
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Realization> .
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/2000/01/rdf-schema#comment> "An ensemble is a collection of realizations, and therefore this property captures the containment relationship"@en .
+<https://w3id.org/mint/mo#hasRealization> <http://www.w3.org/2000/01/rdf-schema#label> "has realization"@en .
+# 
+# https://w3id.org/mint/mo#hasReference
+<https://w3id.org/mint/mo#hasReference> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasReference> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mint/mo#Ensemble> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/mint/mo#EnsembleSpecification> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://w3id.org/mint/mo#hasReference> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#Realization> .
+<https://w3id.org/mint/mo#hasReference> <http://www.w3.org/2000/01/rdf-schema#comment> "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble. Ensemble specifications may include a reference realization for comparison against the rest."@en .
+<https://w3id.org/mint/mo#hasReference> <http://www.w3.org/2000/01/rdf-schema#label> "has reference"@en .
+# 
+# https://w3id.org/mint/mo#hasTheme
+<https://w3id.org/mint/mo#hasTheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasTheme> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#hasTheme> <http://www.w3.org/2000/01/rdf-schema#comment> "Property used to indicate the variation over some workflow elements in a workflow Ensemble. The elements that do not belong to the theme will be considered fixed"@en .
+<https://w3id.org/mint/mo#hasTheme> <http://www.w3.org/2000/01/rdf-schema#label> "has theme"@en .
+# 
+# https://w3id.org/mint/mo#hasWorkflowTemplate
+<https://w3id.org/mint/mo#hasWorkflowTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/mint/mo#hasWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<https://w3id.org/mint/mo#hasWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#hasWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/mint/mo#WorkflowTemplate> .
+<https://w3id.org/mint/mo#hasWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "has workflow template"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.opmw.org/ontology/DataVariable
+<http://www.opmw.org/ontology/DataVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opmw.org/ontology/DataVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opmw.org/ontology/> .
+# 
+# http://www.opmw.org/ontology/ParameterVariable
+<http://www.opmw.org/ontology/ParameterVariable> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opmw.org/ontology/ParameterVariable> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opmw.org/ontology/> .
+# 
+# http://www.opmw.org/ontology/WorkflowExecutionAccount
+<http://www.opmw.org/ontology/WorkflowExecutionAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opmw.org/ontology/WorkflowExecutionAccount> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/mint/mo#Realization> .
+<http://www.opmw.org/ontology/WorkflowExecutionAccount> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opmw.org/ontology/> .
+# 
+# http://www.opmw.org/ontology/WorkflowTemplate
+<http://www.opmw.org/ontology/WorkflowTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opmw.org/ontology/WorkflowTemplate> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/mint/mo#WorkflowTemplate> .
+<http://www.opmw.org/ontology/WorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opmw.org/ontology> .
+# 
+# http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Activity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov#> .
+# 
+# http://www.w3.org/ns/prov#Plan
+<http://www.w3.org/ns/prov#Plan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/ns/prov#Plan> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/ns/prov#> .
+# 
+# https://w3id.org/mint/mo#CounterFactualQuestion
+<https://w3id.org/mint/mo#CounterFactualQuestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#CounterFactualQuestion> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasBaseline> .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/mint/mo#Realization> .
+<https://w3id.org/mint/mo#CounterFactualQuestion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#CounterFactualQuestion> <http://www.w3.org/2000/01/rdf-schema#comment> "A counterfactual question (often asked as a “what if” question) uses data about a situation to explore alternative timelines that are either diagnostic or prognostic in nature.\n \nExamples of counterfactual questions are:  What if there is a drought during the next planting season?  What if roads had not been inundated during the last flood?"@en .
+<https://w3id.org/mint/mo#CounterFactualQuestion> <http://www.w3.org/2000/01/rdf-schema#label> "Counterfactual question"@en .
+# 
+# https://w3id.org/mint/mo#DataEnsemble
+<https://w3id.org/mint/mo#DataEnsemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#DataEnsemble> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasTheme> .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opmw.org/ontology/DataVariable> .
+<https://w3id.org/mint/mo#DataEnsemble> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#DataEnsemble> <http://www.w3.org/2000/01/rdf-schema#comment> "A data ensemble is an ensemble where the theme consists on a variation of data"@en .
+<https://w3id.org/mint/mo#DataEnsemble> <http://www.w3.org/2000/01/rdf-schema#label> "Data ensemble"@en .
+# 
+# https://w3id.org/mint/mo#DataSpecification
+<https://w3id.org/mint/mo#DataSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#DataSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "All the input data and parameters needed by the models in order to carry out one realization."@en .
+<https://w3id.org/mint/mo#DataSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Data specification"@en .
+# 
+# https://w3id.org/mint/mo#DiagnosticQuestion
+<https://w3id.org/mint/mo#DiagnosticQuestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#DiagnosticQuestion> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasDataSpecification> .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/mint/mo#HindcastSpecification> .
+<https://w3id.org/mint/mo#DiagnosticQuestion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#DiagnosticQuestion> <http://www.w3.org/2000/01/rdf-schema#comment> "A diagnostic question uses data about past situations in order to understand how some set of variables of interest behave.  Data about past situations may be available from observations, but when variables cannot be observed the data may be hindcasts of those variables, i.e., their probable values.  Diagnostic questions are useful to identify the source of a problem that has already occurred, and to understand how to avoid the same problem in the future.\n \nAn example of a diagnostic question is: “What caused the crops to fail in 2017 in South Sudan?”"@en .
+<https://w3id.org/mint/mo#DiagnosticQuestion> <http://www.w3.org/2000/01/rdf-schema#label> "Diagnostic question"@en .
+# 
+# https://w3id.org/mint/mo#Ensemble
+<https://w3id.org/mint/mo#Ensemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#Ensemble> <http://www.w3.org/2000/01/rdf-schema#comment> "A collection of realizations that have a common theme. The theme can be implemented as a variation over some workflow elements while the rest of the workflow is considered fixed.  For example, an ensemble may vary the value of an input parameter while all else (e.g., the input data, the models) remains the same.\n \nIn some cases, the workflow elements that are not in the theme can be considered fixed and will be the same for all the ensemble elements.  This is the case when a parameter is varied, since the data preparation and modeling steps of the workflow will typically be exactly the same.  Note that the workflow elements not in the theme can be considered fixed but in reality they will not be the same.  For example, if a variation in the initial data is the theme it may not be possible to use the same model configuration for all the initial conditions, and if the model configuration varies then the data preparation steps may also vary."@en .
+<https://w3id.org/mint/mo#Ensemble> <http://www.w3.org/2000/01/rdf-schema#label> "Ensemble"@en .
+# 
+# https://w3id.org/mint/mo#EnsembleSpecification
+<https://w3id.org/mint/mo#EnsembleSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#EnsembleSpecification> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasReference> .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/mint/mo#Realization> .
+<https://w3id.org/mint/mo#EnsembleSpecification> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasTheme> .
+_:genid11 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/mint/mo#EnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "A workflow ensemble specification includes:\n1.     the theme of the ensemble\n2.     a comparable structure for the remainder of the realizations\n3.     (optionally) a reference realization"@en .
+<https://w3id.org/mint/mo#EnsembleSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Ensemble specification"@en .
+# 
+# https://w3id.org/mint/mo#ExecutableWorkflow
+<https://w3id.org/mint/mo#ExecutableWorkflow> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#ExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Plan> .
+<https://w3id.org/mint/mo#ExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#comment> "Type of plan that specifies not only the dataflow but also input and output datasets"@en .
+<https://w3id.org/mint/mo#ExecutableWorkflow> <http://www.w3.org/2000/01/rdf-schema#label> "Executable workflow"@en .
+# 
+# https://w3id.org/mint/mo#ForecastSpecification
+<https://w3id.org/mint/mo#ForecastSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#ForecastSpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#DataSpecification> .
+<https://w3id.org/mint/mo#ForecastSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "All the input data and parameters needed by the models in order to carry out one realization in prognostic modeling questions"@en .
+<https://w3id.org/mint/mo#ForecastSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Forecast specification"@en .
+# 
+# https://w3id.org/mint/mo#HighLevelWorkflowTemplate
+<https://w3id.org/mint/mo#HighLevelWorkflowTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#HighLevelWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Plan> .
+<https://w3id.org/mint/mo#HighLevelWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of workflow specification that includes the main steps to execute, but not intermediate steps and data transformations"@en .
+<https://w3id.org/mint/mo#HighLevelWorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "High level workflow"@en .
+# 
+# https://w3id.org/mint/mo#HindcastSpecification
+<https://w3id.org/mint/mo#HindcastSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#HindcastSpecification> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#DataSpecification> .
+<https://w3id.org/mint/mo#HindcastSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "All the input data and parameters needed by the models in order to carry out one realization in diagnostic modeling questions"@en .
+<https://w3id.org/mint/mo#HindcastSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Hindcast specification"@en .
+# 
+# https://w3id.org/mint/mo#Intervention
+<https://w3id.org/mint/mo#Intervention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#Intervention> <http://www.w3.org/2000/01/rdf-schema#comment> "Event that can change the behavior of a system either in the past or in the future.  Typically an intervention is carried out by humans changing the situation (e.g., reducing the amount of agriculture subsidies) with the goal of changing outcomes.\n \nInterventions have a role in all types of questions: diagnostic (e.g., what was the effect of the help sent to South Sudan during the 2017 famine?), prognostic (e.g., what would happen if help was sent to South Sudan in 2018?) or counterfactual (e.g., what would have happened if help had been sent in the form of cash rather than food supply?)."@en .
+<https://w3id.org/mint/mo#Intervention> <http://www.w3.org/2000/01/rdf-schema#label> "Intervention"@en .
+# 
+# https://w3id.org/mint/mo#InterventionSpecification
+<https://w3id.org/mint/mo#InterventionSpecification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#InterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#comment> "An intervention specification consists of some of the input data and parameters needed by the models in order to run one realization.\n\nWhile an intervention specifies the element that you are planning on artificially varying, the intervention specification indicates the actual value of such modification. The elements of an intervention specification can be defined with the dcterms:hasPart relationship"@en .
+<https://w3id.org/mint/mo#InterventionSpecification> <http://www.w3.org/2000/01/rdf-schema#label> "Intervention specification"@en .
+# 
+# https://w3id.org/mint/mo#ModelEnsemble
+<https://w3id.org/mint/mo#ModelEnsemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#ModelEnsemble> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasTheme> .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/mint/modelCatalog#Model> .
+<https://w3id.org/mint/mo#ModelEnsemble> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#ModelEnsemble> <http://www.w3.org/2000/01/rdf-schema#comment> "A workflow ensemble has a theme that consists on varying a model"@en .
+<https://w3id.org/mint/mo#ModelEnsemble> <http://www.w3.org/2000/01/rdf-schema#label> "Model ensemble"@en .
+# 
+# https://w3id.org/mint/mo#ModelingQuestion
+<https://w3id.org/mint/mo#ModelingQuestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#ModelingQuestion> <http://www.w3.org/2000/01/rdf-schema#comment> "A driver of the main analysis carried out. The modeling question associates tasks, ensemble specifications and executions associated to a region."@en .
+<https://w3id.org/mint/mo#ModelingQuestion> <http://www.w3.org/2000/01/rdf-schema#label> "Modeling question"@en .
+# 
+# https://w3id.org/mint/mo#ParameterEnsemble
+<https://w3id.org/mint/mo#ParameterEnsemble> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#ParameterEnsemble> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasTheme> .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opmw.org/ontology/ParameterVariable> .
+<https://w3id.org/mint/mo#ParameterEnsemble> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#EnsembleSpecification> .
+<https://w3id.org/mint/mo#ParameterEnsemble> <http://www.w3.org/2000/01/rdf-schema#comment> "A parameter ensemble is an ensemble in which the theme consists on the variation of a parameter"@en .
+<https://w3id.org/mint/mo#ParameterEnsemble> <http://www.w3.org/2000/01/rdf-schema#label> "Parameter variable"@en .
+# 
+# https://w3id.org/mint/mo#PrognosticQuestion
+<https://w3id.org/mint/mo#PrognosticQuestion> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#PrognosticQuestion> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/mint/mo#hasDataSpecification> .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/mint/mo#ForecastSpecification> .
+<https://w3id.org/mint/mo#PrognosticQuestion> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/mint/mo#ModelingQuestion> .
+<https://w3id.org/mint/mo#PrognosticQuestion> <http://www.w3.org/2000/01/rdf-schema#comment> "A prognostic question uses forecasts (i.e., data about possible initial conditions or situations) in order to understand how some set of variables of interest will behave in the future.  Prognostic questions may look into a few days or into hundreds of years into the future.\n \nExamples of prognostic questions are: Can we expect flooding in South Sudan in the upcoming rainy season?  How does a 2-sigma drought affect water availability for crops?\nHow will climate change impact water resources (e.g. reservoirs in South Sudan) by the year 2030?"@en .
+<https://w3id.org/mint/mo#PrognosticQuestion> <http://www.w3.org/2000/01/rdf-schema#label> "Prognostic question"@en .
+# 
+# https://w3id.org/mint/mo#Realization
+<https://w3id.org/mint/mo#Realization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#Realization> <http://www.w3.org/2000/01/rdf-schema#comment> "A realization is a single execution of a workflow, where given a fixed input situation and parameter settings (i.e., given input datasets and parameters), the integrated model generates a prediction (i.e., output datasets)."@en .
+<https://w3id.org/mint/mo#Realization> <http://www.w3.org/2000/01/rdf-schema#label> "Realization"@en .
+# 
+# https://w3id.org/mint/mo#Region
+<https://w3id.org/mint/mo#Region> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#Region> <http://www.w3.org/2000/01/rdf-schema#comment> "Location of interest for the modeling question at hand. \n\nThe goal of this class is to be aligned to a geographic ontology."@en .
+<https://w3id.org/mint/mo#Region> <http://www.w3.org/2000/01/rdf-schema#label> "Region"@en .
+# 
+# https://w3id.org/mint/mo#WorkflowEnsembleAggregation
+<https://w3id.org/mint/mo#WorkflowEnsembleAggregation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#WorkflowEnsembleAggregation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/mint/mo#WorkflowEnsembleAggregation> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity that involves comparing or combining the results of the executions of the workflows for the ensemble elements"@en .
+<https://w3id.org/mint/mo#WorkflowEnsembleAggregation> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow ensemble aggregation"@en .
+# 
+# https://w3id.org/mint/mo#WorkflowEnsembleConstruction
+<https://w3id.org/mint/mo#WorkflowEnsembleConstruction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#WorkflowEnsembleConstruction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/mint/mo#WorkflowEnsembleConstruction> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity that  involves generating an executable workflow for each element of the ensemble following the specification"@en .
+<https://w3id.org/mint/mo#WorkflowEnsembleConstruction> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow ensemble construction"@en .
+# 
+# https://w3id.org/mint/mo#WorkflowEnsembleExecution
+<https://w3id.org/mint/mo#WorkflowEnsembleExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#WorkflowEnsembleExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Activity> .
+<https://w3id.org/mint/mo#WorkflowEnsembleExecution> <http://www.w3.org/2000/01/rdf-schema#comment> "Activity that involves running the executable workflows of ensemble element"@en .
+<https://w3id.org/mint/mo#WorkflowEnsembleExecution> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow ensemble execution"@en .
+# 
+# https://w3id.org/mint/mo#WorkflowTemplate
+<https://w3id.org/mint/mo#WorkflowTemplate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/mo#WorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Plan> .
+<https://w3id.org/mint/mo#WorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#comment> "A workflow template specifies the dataflow among the computational steps but without specifying input data and parameters"@en .
+<https://w3id.org/mint/mo#WorkflowTemplate> <http://www.w3.org/2000/01/rdf-schema#label> "Workflow template"@en .
+# 
+# https://w3id.org/mint/modelCatalog#Model
+<https://w3id.org/mint/modelCatalog#Model> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/mint/modelCatalog#Model> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://w3id.org/mint/modelCatalog#> .
+# 
+# Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/
