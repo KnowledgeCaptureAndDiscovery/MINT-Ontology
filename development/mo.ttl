@@ -41,13 +41,37 @@
                                    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 
+###  https://w3id.org/mint/mo#hasBaseline
+:hasBaseline rdf:type owl:ObjectProperty ;
+             rdfs:domain :CounterFactualQuestion ;
+             rdfs:range :Realization ;
+             rdfs:comment "Property that indicates the baseline or status quo of a counterfactual question for comparison."@en ;
+             rdfs:label "has baseline"@en .
+
+
+###  https://w3id.org/mint/mo#hasDataSpecification
+:hasDataSpecification rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
+                      rdfs:domain :ModelingQuestion ;
+                      rdfs:range :DataSpecification .
+
+
 ###  https://w3id.org/mint/mo#hasEnsemble
 :hasEnsemble rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
              rdfs:domain :Ensemble ;
              rdfs:range :Ensemble ;
-             rdfs:comment "An ensemble may be an aggregation of simpler ensembles."@en ;
+             rdfs:comment "An ensemble may be an aggregation of simpler nested ensembles."@en ;
              rdfs:label "has ensemble"@en .
+
+
+###  https://w3id.org/mint/mo#hasIntervention
+:hasIntervention rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ;
+                 rdfs:domain :ModelingQuestion ;
+                 rdfs:range :Intervention ;
+                 rdfs:comment "Property that indicates the interventions associated to a modeling question"@en ;
+                 rdfs:label "has intervention"@en .
 
 
 ###  https://w3id.org/mint/mo#hasRealization
@@ -67,7 +91,7 @@
                                         )
                           ] ;
               rdfs:range :Realization ;
-              rdfs:comment "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble"@en ;
+              rdfs:comment "An ensemble may have a reference realization that indicates the baseline for comparison against other realizations of the ensemble. Ensemble specifications may include a reference realization for comparison against the rest."@en ;
               rdfs:label "has reference"@en .
 
 
@@ -104,6 +128,11 @@
                                                 rdfs:isDefinedBy <http://www.opmw.org/ontology> .
 
 
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
+                                     rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .
+
+
 ###  http://www.w3.org/ns/prov#Plan
 <http://www.w3.org/ns/prov#Plan> rdf:type owl:Class ;
                                  rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .
@@ -111,7 +140,15 @@
 
 ###  https://w3id.org/mint/mo#CounterFactualQuestion
 :CounterFactualQuestion rdf:type owl:Class ;
-                        rdfs:subClassOf :ModelingQuestion .
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasBaseline ;
+                                              owl:someValuesFrom :Realization
+                                            ] ;
+                        rdfs:subClassOf :ModelingQuestion ;
+                        rdfs:comment """A counterfactual question (often asked as a “what if” question) uses data about a situation to explore alternative timelines that are either diagnostic or prognostic in nature.
+ 
+Examples of counterfactual questions are:  What if there is a drought during the next planting season?  What if roads had not been inundated during the last flood?"""@en ;
+                        rdfs:label "Counterfactual question"@en .
 
 
 ###  https://w3id.org/mint/mo#DataEnsemble
@@ -121,20 +158,31 @@
                                     owl:someValuesFrom <http://www.opmw.org/ontology/DataVariable>
                                   ] ;
               rdfs:subClassOf :EnsembleSpecification ;
+              rdfs:comment "A data ensemble is an ensemble where the theme consists on a variation of data"@en ;
               rdfs:label "Data ensemble"@en .
+
+
+###  https://w3id.org/mint/mo#DataSpecification
+:DataSpecification rdf:type owl:Class ;
+                   rdfs:comment "All the input data and parameters needed by the models in order to carry out one realization."@en ;
+                   rdfs:label "Data specification"@en .
 
 
 ###  https://w3id.org/mint/mo#DiagnosticQuestion
 :DiagnosticQuestion rdf:type owl:Class ;
-                    rdfs:subClassOf :ModelingQuestion .
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasDataSpecification ;
+                                          owl:someValuesFrom :HindcastSpecification
+                                        ] ;
+                    rdfs:subClassOf :ModelingQuestion ;
+                    rdfs:comment """A diagnostic question uses data about past situations in order to understand how some set of variables of interest behave.  Data about past situations may be available from observations, but when variables cannot be observed the data may be hindcasts of those variables, i.e., their probable values.  Diagnostic questions are useful to identify the source of a problem that has already occurred, and to understand how to avoid the same problem in the future.
+ 
+An example of a diagnostic question is: “What caused the crops to fail in 2017 in South Sudan?”"""@en ;
+                    rdfs:label "Diagnostic question"@en .
 
 
 ###  https://w3id.org/mint/mo#Ensemble
 :Ensemble rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasReference ;
-                                owl:someValuesFrom :Realization
-                              ] ;
           rdfs:comment """A collection of realizations that have a common theme. The theme can be implemented as a variation over some workflow elements while the rest of the workflow is considered fixed.  For example, an ensemble may vary the value of an input parameter while all else (e.g., the input data, the models) remains the same.
  
 In some cases, the workflow elements that are not in the theme can be considered fixed and will be the same for all the ensemble elements.  This is the case when a parameter is varied, since the data preparation and modeling steps of the workflow will typically be exactly the same.  Note that the workflow elements not in the theme can be considered fixed but in reality they will not be the same.  For example, if a variation in the initial data is the theme it may not be possible to use the same model configuration for all the initial conditions, and if the model configuration varies then the data preparation steps may also vary."""@en ;
@@ -165,11 +213,41 @@ In some cases, the workflow elements that are not in the theme can be considered
                     rdfs:label "Executable workflow"@en .
 
 
+###  https://w3id.org/mint/mo#ForecastSpecification
+:ForecastSpecification rdf:type owl:Class ;
+                       rdfs:subClassOf :DataSpecification ;
+                       rdfs:comment "All the input data and parameters needed by the models in order to carry out one realization in prognostic modeling questions"@en ;
+                       rdfs:label "Forecast specification"@en .
+
+
 ###  https://w3id.org/mint/mo#HighLevelWorkflowTemplate
 :HighLevelWorkflowTemplate rdf:type owl:Class ;
                            rdfs:subClassOf <http://www.w3.org/ns/prov#Plan> ;
                            rdfs:comment "A type of workflow specification that includes the main steps to execute, but not intermediate steps and data transformations"@en ;
                            rdfs:label "High level workflow"@en .
+
+
+###  https://w3id.org/mint/mo#HindcastSpecification
+:HindcastSpecification rdf:type owl:Class ;
+                       rdfs:subClassOf :DataSpecification ;
+                       rdfs:comment "All the input data and parameters needed by the models in order to carry out one realization in diagnostic modeling questions"@en ;
+                       rdfs:label "Hindcast specification"@en .
+
+
+###  https://w3id.org/mint/mo#Intervention
+:Intervention rdf:type owl:Class ;
+              rdfs:comment """Event that can change the behavior of a system either in the past or in the future.  Typically an intervention is carried out by humans changing the situation (e.g., reducing the amount of agriculture subsidies) with the goal of changing outcomes.
+ 
+Interventions have a role in all types of questions: diagnostic (e.g., what was the effect of the help sent to South Sudan during the 2017 famine?), prognostic (e.g., what would happen if help was sent to South Sudan in 2018?) or counterfactual (e.g., what would have happened if help had been sent in the form of cash rather than food supply?)."""@en ;
+              rdfs:label "Intervention"@en .
+
+
+###  https://w3id.org/mint/mo#InterventionSpecification
+:InterventionSpecification rdf:type owl:Class ;
+                           rdfs:comment """An intervention specification consists of some of the input data and parameters needed by the models in order to run one realization.
+
+While an intervention specifies the element that you are planning on artificially varying, the intervention specification indicates the actual value of such modification. The elements of an intervention specification can be defined with the dcterms:hasPart relationship"""@en ;
+                           rdfs:label "Intervention specification"@en .
 
 
 ###  https://w3id.org/mint/mo#ModelEnsemble
@@ -179,11 +257,14 @@ In some cases, the workflow elements that are not in the theme can be considered
                                      owl:someValuesFrom <https://w3id.org/mint/modelCatalog#Model>
                                    ] ;
                rdfs:subClassOf :EnsembleSpecification ;
+               rdfs:comment "A workflow ensemble has a theme that consists on varying a model"@en ;
                rdfs:label "Model ensemble"@en .
 
 
 ###  https://w3id.org/mint/mo#ModelingQuestion
-:ModelingQuestion rdf:type owl:Class .
+:ModelingQuestion rdf:type owl:Class ;
+                  rdfs:comment "A driver of the main analysis carried out. The modeling question associates tasks, ensemble specifications and executions associated to a region."@en ;
+                  rdfs:label "Modeling question"@en .
 
 
 ###  https://w3id.org/mint/mo#ParameterEnsemble
@@ -193,11 +274,16 @@ In some cases, the workflow elements that are not in the theme can be considered
                                          owl:someValuesFrom <http://www.opmw.org/ontology/ParameterVariable>
                                        ] ;
                    rdfs:subClassOf :EnsembleSpecification ;
+                   rdfs:comment "A parameter ensemble is an ensemble in which the theme consists on the variation of a parameter"@en ;
                    rdfs:label "Parameter variable"@en .
 
 
 ###  https://w3id.org/mint/mo#PrognosticQuestion
 :PrognosticQuestion rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasDataSpecification ;
+                                          owl:someValuesFrom :ForecastSpecification
+                                        ] ;
                     rdfs:subClassOf :ModelingQuestion ;
                     rdfs:comment """A prognostic question uses forecasts (i.e., data about possible initial conditions or situations) in order to understand how some set of variables of interest will behave in the future.  Prognostic questions may look into a few days or into hundreds of years into the future.
  
@@ -210,6 +296,27 @@ How will climate change impact water resources (e.g. reservoirs in South Sudan) 
 :Realization rdf:type owl:Class ;
              rdfs:comment "A realization is a single execution of a workflow, where given a fixed input situation and parameter settings (i.e., given input datasets and parameters), the integrated model generates a prediction (i.e., output datasets)."@en ;
              rdfs:label "Realization"@en .
+
+
+###  https://w3id.org/mint/mo#WorkflowEnsembleAggregation
+:WorkflowEnsembleAggregation rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                             rdfs:comment "Activity that involves comparing or combining the results of the executions of the workflows for the ensemble elements"@en ;
+                             rdfs:label "Workflow ensemble aggregation"@en .
+
+
+###  https://w3id.org/mint/mo#WorkflowEnsembleConstruction
+:WorkflowEnsembleConstruction rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                              rdfs:comment "Activity that  involves generating an executable workflow for each element of the ensemble following the specification"@en ;
+                              rdfs:label "Workflow ensemble construction"@en .
+
+
+###  https://w3id.org/mint/mo#WorkflowEnsembleExecution
+:WorkflowEnsembleExecution rdf:type owl:Class ;
+                           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                           rdfs:comment "Activity that involves running the executable workflows of ensemble element"@en ;
+                           rdfs:label "Workflow ensemble execution"@en .
 
 
 ###  https://w3id.org/mint/mo#WorkflowTemplate
