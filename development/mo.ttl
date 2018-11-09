@@ -10,6 +10,7 @@
                             owl:versionIRI <https://w3id.org/mint/mo/0.0.1> ;
                             <http://purl.org/dc/terms/creator> "Deborah Khider"@en ;
                             <http://purl.org/dc/terms/title> "The MINT Modeling Ontology"@en ;
+                            owl:versionInfo "0.0.1" ;
                             <http://purl.org/dc/terms/licence> <http://creativecommons.org/licenses/by/2.0/> ;
                             rdfs:comment "An ontology designed to define a common data model to define modeling questions, prepare the execution of analysis and present results to modelers."@en ;
                             <http://purl.org/dc/terms/creator> "Varun Ratnakar"@en ,

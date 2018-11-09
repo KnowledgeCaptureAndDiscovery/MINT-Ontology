@@ -10,3 +10,7 @@ for a document with a discussion of the definitions and
 https://docs.google.com/spreadsheets/d/1WZ8Tw1cDyzs82BytWm81UmsRJerD0MVstXPcf6LMr90/edit#gid=0
 
 As a draft for ontology terms.
+
+The Current ontology is published at: 
+
+https://knowledgecaptureanddiscovery.github.io/MINT-Ontology/documentation/0.0.1/index-en.html
